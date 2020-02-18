@@ -1,4 +1,4 @@
-﻿<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.hxhx.barcode" version="0.1.2" versionCode="">
+﻿<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.hxhx.barcode" version="0.1.3" versionCode="000103">
   <name>华西化纤条码</name>
   <description>华西化纤条码</description>
   <author email="dev@trusteem.com" href="http://www.trusteem.com.cn">Trusteem.com</author>

@@ -13,7 +13,7 @@
                     editorOptions: {
                         onKeyDown: function (e) {
                             var txtMsg = $("#txtMsg").dxTextBox("instance");
-                            txtMsg.option("value", e.event.key);
+                            txtMsg.option("value", e.event.keyCode+"   "+e.event.char);
 
                             switch (e.event.key) {
                                 case "F1": {
