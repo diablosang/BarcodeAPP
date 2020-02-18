@@ -12,6 +12,9 @@
                     dataField: "CODE_BAR",
                     editorOptions: {
                         onKeyDown: function (e) {
+                            var txtMsg = $("#txtMsg").dxTextBox("instance");
+                            txtMsg.option("value", e.event.key);
+
                             switch (e.event.key) {
                                 case "F1": {
                                     e.event.preventDefault();

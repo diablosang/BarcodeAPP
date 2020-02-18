@@ -28,15 +28,15 @@
             }
 
             if (viewModel.versionChecked() == false) {
-                try {
-                    CheckUpdate();
+                //try {
+                //    CheckUpdate();
 
-                    cordova.getAppVersion.getVersionNumber().then(function (version) {
-                        $("#appver").text("Version: " + version);
-                        CheckUpdate();
-                    });
-                }
-                catch (e) { }
+                //    cordova.getAppVersion.getVersionNumber().then(function (version) {
+                //        $("#appver").text("Version: " + version);
+                //        CheckUpdate();
+                //    });
+                //}
+                //catch (e) { }
 
                 viewModel.versionChecked(true);
             }
