@@ -151,6 +151,7 @@
         var editor = form.getEditor("CODE_BAR");
         editor.option("value", "");
         editor.focus();
+        cordova.plugins.Keyboard.hide();
     }
 
     function BarcodeScan() {
