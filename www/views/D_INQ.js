@@ -12,16 +12,15 @@
                     dataField: "CODE_BAR",
                     editorOptions: {
                         onKeyDown: function (e) {
-                            var txtMsg = $("#txtMsg").dxTextBox("instance");
-                            txtMsg.option("value", e.event.keyCode+"   "+e.event.char);
-
-                            switch (e.event.key) {
-                                case "F1": {
+                            switch (e.event.keyCode) {
+                                //F1
+                                case 112: {
                                     e.event.preventDefault();
                                     e.event.stopPropagation();
                                     break;
                                 }
-                                case "Enter": {
+                                //Enter
+                                case 13: {
                                     BarcodeScan();
                                     break;
                                 }
