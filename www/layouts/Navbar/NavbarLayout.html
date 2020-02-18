@@ -1,0 +1,19 @@
+<div class="navbar-layout" data-options="dxLayout : { name: 'navbar', platform: 'generic' } " >
+    <div id="layout_header" class="layout-header dx-toolbar-background" data-options="dxContentPlaceholder : { name: 'header', animation: 'view-header-toolbar' }">
+        <div data-bind="dxToolbar: { items: [{ text: title, location: 'center' }] }" data-options="dxCommandContainer : { id: 'generic-header-toolbar' }">
+        </div>
+    </div>
+
+    <div id="layout-content" class="layout-content" data-options="dxContentPlaceholder : { name: 'content', animation: 'view-content-change' }">
+    </div>
+
+    <div id="layout_footer" class="layout-footer">
+        <div class="navbar-container" data-bind="dxNavBar: {}" data-options="dxCommandContainer: { id: 'global-navigation' }">
+        </div>
+    </div>
+
+    <div id="layout_viewfooter" class="view-footer" data-options="dxContent : { targetPlaceholder: 'view-footer' } ">
+        <div class="view-toolbar-bottom" data-bind="dxToolbar: { visible: false }" data-options="dxCommandContainer : { id: 'generic-view-footer' } ">
+        </div>
+    </div>
+</div>

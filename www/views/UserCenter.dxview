@@ -1,0 +1,39 @@
+<div data-options="dxView : { name: 'UserCenter', title: '' } " >
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+    <div class="UC_HeaderPanel">
+    </div>
+    <img src="images/Anonymous.jpg" class="UC_HeaderImage"/>
+    <div class="UC_UserName" id="UC_UserName"></div>
+    <div class="UC_UserPosition" id="UC_UserName"></div>
+    <div class="UC_ContentPanel">
+      <div style="margin-left:10px;">
+        <div class="UC_Item" data-bind="click: itemClick.ChangePassword" style="display:none">
+          <img src="images/changepwd.svg"/>
+          <span id="spanChangePwd">更改密码</span>
+        </div>
+        <div class="UC_Item" data-bind="click: itemClick.MyRole">
+          <img src="images/role.svg"/>
+          <span id="spanMyRole">我的角色</span>
+        </div>
+        <div class="UC_Item" data-bind="click: itemClick.NA">
+          <img src="images/chart.svg" />
+          <span  id="spanCount">统计</span>
+        </div>
+        <div class="UC_Item" data-bind="click: itemClick.NA">
+          <img src="images/addresslist.png" />
+          <span  id="spanContact">通讯录</span>
+        </div>
+        <div class="UC_Item" data-bind="click: itemClick.AboutView">
+          <img src="images/about.svg" />
+          <span  id="spanAbout">关于</span>
+        </div>
+        <div class="UC_Item" data-bind="click: itemClick.Config"/>
+        <img src="images/setting.svg" />
+        <span  id="spanSetting">设置</span>
+      </div>
+      <div id="btnLogoff" class="UC_Logoff" data-bind="dxButton: { text: SysMsg.logoff, onClick:onLogoffClick}"></div>
+      <div id="appver"></div>
+    </div>
+  </div>
+  <img src="images/scan.svg" class="UC_Scan" />
+</div>

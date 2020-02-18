@@ -1,0 +1,131 @@
+/* Layout */
+
+.navbar-layout,
+.navbar-layout-tablet {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-color:transparent;
+    /*background-color:rgba(232,232,232,0.1);*/
+}
+    .navbar-layout-tablet:after {
+        width:100%;
+        height:100%;
+        filter:blue(5px);
+    }
+
+
+    .navbar-layout .layout-header {
+        position: absolute;
+        width: 100%;
+        background-color:transparent;
+        /*background-color: #1E90FF;*/
+    }
+
+    .navbar-layout .layout-content {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        background-color:transparent;
+    }
+
+        .navbar-layout .layout-content > div,
+        .navbar-layout .transition-frame {
+            height: 100%;
+            width: 100%;
+            background-color:transparent;
+        }
+
+    .navbar-layout .layout-footer {
+        width: 100%;
+        position: absolute;
+        background-color:transparent;
+    }
+
+    .navbar-layout .view-footer {
+        position: static;
+        background-color:transparent;
+    }
+
+        .navbar-layout .view-footer .dx-toolbar {
+            background: transparent;
+            border: none;
+            margin-bottom: 10px;
+            background-color:transparent;
+        }
+
+            .navbar-layout .view-footer .dx-toolbar .dx-toolbar-center {
+                width: 100%;
+                background-color:transparent;
+            }
+
+
+/* generic */
+
+.dx-theme-generic .navbar-layout .layout-content {
+    top: 40px;
+    bottom: 0px;
+    background-color:transparent;
+}
+
+.dx-theme-generic.dx-device-mobile .navbar-layout .layout-header {
+    height: 40px;
+    background-color:transparent;
+}
+
+    .dx-theme-generic.dx-device-mobile .navbar-layout .layout-header .dx-toolbar {
+        /*background: none;*/
+        background-color:transparent;
+    }
+
+
+
+.dx-theme-generic .navbar-layout .layout-header .dx-toolbar {
+    padding: 0 10px;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout .layout-header .dx-toolbar-items-container {
+    height: 40px;
+    color: white;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout .layout-header .dx-toolbar-item .dx-button {
+    /*background-color: #1E90FF;*/
+     background-color:transparent;
+    border:none;
+}
+
+    .dx-theme-generic .navbar-layout .layout-header .dx-toolbar-item .dx-button .dx-icon {
+        color: white;
+         background-color:transparent;
+    }
+
+
+.dx-theme-generic .navbar-layout.has-navbar .layout-content {
+    bottom: 68px;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout .layout-footer,
+.dx-theme-generic .navbar-layout .layout-footer .dx-navbar {
+    bottom: 0;
+    height: 68px;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout.has-toolbar .layout-footer {
+    display: block;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout .dx-tabs.dx-navbar {
+    padding: 0;
+    background-color:transparent;
+}
+
+.dx-theme-generic .navbar-layout .view-footer .dx-button {
+    width: 97%;
+    overflow: visible;
+}

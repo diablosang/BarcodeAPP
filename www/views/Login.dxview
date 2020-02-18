@@ -1,0 +1,29 @@
+<div data-options="dxView : { name: 'Login', title: '' } ">
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="Login_View">
+    <div class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+    <div class="Login_Box">
+      <img id="logoImg" class="Login_Logo" align="center" src="" onerror="javascript:this.src='images/logo.png?v=1'" onclick="LogoClicked()"/>
+      <!--<div class="LG_Radio" data-bind="dxRadioGroup: { items: [ '企业内部账户', '企荫通行证'], layout:'horizontal' }"></div>-->
+      <div id="inputBox1" class="Login_InputBox">
+        <img src="images/user.svg" class="Login_SideImg" fill="white"></img>
+        <div id="txtUser" class="LG_TextBox" data-bind="dxTextBox: {
+                 maxLength: 24,
+                 placeholder: '请输入用户名',
+                 value:username
+               }"></div>
+      </div>
+      <div class="Login_InputBox">
+        <img src="images/password.svg" class="Login_SideImg" fill="white"></img>
+        <div id="txtPwd" class="LG_TextBox" data-bind="dxTextBox: {
+                   mode: 'password',
+                   placeholder: '请输入密码',
+                   value:password
+                }"></div>
+      </div>
+
+      <div id="btnLogin" class="Login_Btn" data-bind="dxButton: { text: '登录',onClick:onLoginClick}"></div>
+      <img src="images/setting.svg" class="Login_SettingImg" data-bind="click: settingClick"></img>
+    </div>
+    
+  </div>
+</div>

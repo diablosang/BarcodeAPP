@@ -1,0 +1,33 @@
+<div data-options="dxView : { name: 'FormEdit', title: '' } ">
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="AsapmentView">
+    <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+    <div id="mainBar" data-bind="dxToolbar: toolBarOption"></div>
+    <div id="divTab" data-bind="dxTabs: {}" class="DashTab"></div>
+    <div data-bind="dxScrollView: {useNative: false }" class="ItemList-ScrollView4">
+      <div id="divBlock"></div>
+    </div>
+    <div id="popComment" data-bind="dxPopup: popCommentOption">
+      <div>
+        <table width="100%">
+          <tr>
+            <td width="100%">
+              <div id="txtComment" data-bind="dxTextArea: {text:comment,height:90}">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div class="ButtonCenter" data-bind="dxButton: { text: SysMsg.ok,onClick: onCommentClick}"></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="popWFHist" data-bind="dxPopup: popWFHistOption">
+      <div id="gridWFHist" data-bind="dxDataGrid: gridWFHistOption" style="width:100%;height:100%"></div>
+    </div>
+  </div>
+</div>

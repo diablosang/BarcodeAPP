@@ -1,0 +1,10 @@
+<div data-options="dxView : { name: 'NBI', title: 'NBI' } " >
+  <div data-bind="dxCommand: { icon: 'chevronup', id: 'btnHide', onExecute: btnHideExecute}"></div>
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="AsapmentView">
+    <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+    <div data-bind="dxScrollView: {useNative:false,showScrollbar:'never' }" class="ItemList-ScrollView">
+      <div id="divCanvas">
+      </div>
+    </div>
+  </div>
+</div>

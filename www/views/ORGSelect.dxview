@@ -1,0 +1,7 @@
+<div data-options="dxView : { name: 'ORGSelect', title: SysMsg.orgselect } " >
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+    <div data-bind="dxScrollView: {useNative: false}" >
+      <div id="gridDataWindow" data-bind="dxDataGrid: gridDataWindowOptions"></div>
+    </div>
+  </div>
+</div>

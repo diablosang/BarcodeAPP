@@ -1,0 +1,12 @@
+<div data-options="dxView : { name: 'BIView', title: 'BIView' } ">
+    <div data-bind="dxCommand: { title: '视图', id: 'cmdShowMenu' ,icon:'menu'}"></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+        <div id="tabView" data-bind="dxTabs: tabOption"></div>
+        <div data-bind="dxScrollView: {useNative: false }">
+            <div id="divView">
+                <div style="height: 300px;" data-bind="dxChart: {dataSource: [{ 'arg': 'milk', 'val': 2, 'val1': 1, 'val2': 3 }, { 'arg': 'soda', 'val': 3, 'val1': 4, 'val2': 5 }], series: [{ 'name': 'Series 1', 'type': 'bar' }], commonSeriesSettings: { 'type': 'bar' } }"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,361 @@
+﻿
+.ItemList-ScrollView {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+}
+
+.GridScroll {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.ItemList-ScrollView2 {
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.Func-ListTop50 {
+    position: absolute;
+    bottom: 0;
+    top: 45px;
+    padding-bottom: 45px;
+    width: 100%;
+    height: auto;
+}
+
+.ItemList-ScrollView3 {
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+
+.ItemList-ScrollView4 {
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    background-color:white;
+}
+
+.ItemForm {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.dx-icon-mycopy {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACbElEQVRIS+2Wv2+xURTHD339qOhQFVRi9QdImvgDDE0aOhjF4E9oLPwLikmwSJeGRCwidDWRCKYuBobGIhZJ24QE973nuLxefXgerbGf5KTnOfc+vj33nnueC0whxWKRAYAie3p6Em99Rc0nKGI2m8H19TX+g+RLGY5dXV1BKBSCZDIp3tyBZBWQy+WYzWYTT/tRq9Usn89TpvF4XET/oViw3+8zk8kknvaDQt1ul72/v5P/+PgoRlb8iUaj8Pn5CcvlEhOWhM+DQCAA4/FYRA7DxcBoNMJoNAKr1QoqlQrC4TCNqbgxr9cLGo1GUlSr1UK73YbBYAAvLy9we3srRqTBH282m+B2u+n54+MDLi4uaE8fHh4otsr1ALFYjDkcDlqiarUqotLgnEQiwRqNBqvX66zT6bDn52eKY/WSIK8wMV0avuzM7/ezt7c3erFcLouRrzidTpqzbWdnZ8xsNpOv+FhMJhPgWUKr1YL7+3uo1Wpi5H96vR7t+bbN5/PN/isWXHNzcwN8meDu7g4qlYqIyoPnFFEsaDAYhAfgcrlgOByCz+cDvqciqhzZPYxEIrT+vNrY+fk5mcVi2ewRFoYc0+mU5tKxwHSx/PeBR+L19RV4FxGRFbwQwOPxQCaTgWAwKKLSoIZerydfNsND2O12Kns51hkeXTS7HOpQUvxY8Fh+BU/Or+DJ0Ol09FdRpzkEXqzS6TT52WwWeNsjfxvsUPjFwGZ/EsFUKgWXl5dQKBQ27WsXFMVrB/Kj1oY3OSWtbQ3tIf8ik/J3wDvMMZAgXnRwjXFpjzFksVgcLbr5rn3XSqWSWDA5GPsL7m/lAFZEpvQAAAAASUVORK5CYII=) 0 0 no-repeat;
+}
+
+.indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    z-index: 9999;
+}
+
+.ButtonLeft {
+    margin-left: 10px;
+    margin-bottom: 50px;
+    height: 45px;
+    width: 45%;
+    float: left;
+    /*background-color:cornflowerblue;*/
+    display: inline;
+}
+
+.ButtonRight {
+    margin-right: 10px;
+    margin-bottom: 50px;
+    height: 45px;
+    width: 45%;
+    float: right;
+    background-color: rgb(245, 155, 155);
+    display: inline;
+}
+
+.ButtonCenter {
+    width: 50%;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.Inline {
+    display: inline;
+    float: left;
+    width: 100px;
+}
+
+.Editable {
+    color: blue;
+}
+
+.EditableR {
+    color: red;
+}
+
+.TrusteemHeader {
+    /*background-color: #1E90FF;*/
+    background-color:transparent;
+    color: #FFFFFF;
+}
+
+.dx-nav-item {
+    /*background: #1E90FF;*/
+     background-color:transparent;
+    color: #FFFFFF;
+}
+
+    .dx-nav-item .dx-icon {
+        color: #FFFFFF;
+    }
+
+    .dx-nav-item.dx-tab-selected {
+        color: #7AC5CD;
+        background-color:transparent;
+    }
+
+     .dx-nav-item.dx-tab-selected .dx-icon{
+        color: #7AC5CD;
+    }
+
+.dx-toolbar {
+    margin: 10px 10px 10px 10px;
+    background-color:transparent;
+}
+
+.dx-toolbar .dx-button {
+    background-color: white;
+}
+
+.DashTab .dx-tab {
+    border:none;
+    background-color: transparent;
+    color:white;
+}
+.DashTab .dx-tab.dx-tab-selected {
+    border:none;
+    background-color:white;
+    color:black;
+}
+
+.dx-tabs {
+    border:none;
+}
+.dx-tab {
+    border:none;
+}
+.dx-tab-selected {
+    border:none;
+}
+.dx-tabs-scrollable .dx-tabs-wrapper {
+    border:none;
+}
+.dx-tab-selected:after {
+    border:none;
+}
+.dx-rtl .dx-tab-selected:not(.dx-state-focused) + .dx-tab-selected:not(.dx-state-focused):after {
+    border:none;
+}
+
+.navbar-layout .layout-header .dx-toolbar {
+    margin: 0 0 0 0;
+     background-color:transparent;
+}
+
+.dx-field-item-label-text {
+    color:white;
+}
+
+.dx-layout-manager.dx-layout-manager-one-col .dx-box-item:not(:first-child) .dx-single-column-item-content > .dx-field-item {
+    padding-top: 0px;
+}
+
+.GridSizedImg {
+    max-width: 128px;
+    max-height: 72px;
+}
+
+.FormSizedImg {
+    max-width: 100%;
+    max-height: 180px;
+}
+
+.ImageToolBar {
+    font-size: larger;
+    position: absolute;
+    color: white;
+    width: 100%;
+    bottom: 0;
+    text-align: left;
+}
+
+.AsapmentView {
+    background-color: white;
+}
+
+.AsapmentView2 {
+    background-color: #E8E8E8;
+}
+
+
+
+.MenuGP {
+    margin-top:0;
+    margin-left:5px;
+    margin-right:5px;
+    border-radius:6px;
+    margin-bottom:5px;
+    border: 0px;
+    background-color:white;
+}
+
+.MenuGH {
+    border-bottom: 1px solid rgba(235,235,235,1);
+    margin-bottom: 5px;
+}
+
+    .MenuGH div {
+        line-height: 40px;
+        /*font-size: 12px;*/
+        color:black;
+        /*color: #696969;*/
+    }
+
+    .MenuGH img {
+        padding-top:9px;
+        padding-right:5px;
+        padding-left: 20px;
+        width: 24px;
+        height: 24px;
+        float: left;
+    }
+
+
+.MenuGHI {
+    padding: 5px 5px 5px 5px;
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+
+.MenuGHT {
+    line-height: 40px;
+}
+
+.MenuGCTB {
+    width: 100%;
+    border-spacing: 5px 20px;
+    border-collapse: separate;
+}
+
+    .MenuGCTB img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .MenuGCTB td {
+        text-align: center;
+        vertical-align: top;
+        table-layout: fixed;
+        width: 25%;
+    }
+
+        .MenuGCTB td div {
+            color:black;
+            text-align: center;
+            font-size: 13px;
+        }
+
+.MenuGCTBF {
+    color: black;
+    font-size: small;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.TextSmall {
+    font-size: small;
+    /*color: #696969;*/
+    /*max-width:300px;*/
+    white-space: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.dashDate {
+    background-color:white;
+}
+
+.dashDate3 {
+    background-color:white;
+}
+
+.dashDate7 {
+    background-color:white;
+}
+
+.dx-datagrid {
+    background-color: white;
+}
+.dx-datagrid-headers{
+    color:dimgrey;
+}
+
+
+
+.LG_Radio {
+    margin: 30px 10px 10px 10px;
+    width:100%;
+    color:white;
+}
+
+.TextLabel {
+    margin-left:10px;
+    color:white;
+}
+
+.InputBox{
+     background-color:white;
+     margin-left:10px;
+     margin-right:10px;
+}
+
+.BG06 {
+    background-color:white;
+}
+
+.BGBOX {
+    background-color: white;
+    padding:10px 10px 10px 10px;
+}
+
+.textBoxReadOnly {
+    border:0;
+    color:white;
+    background-color:transparent;
+}
+
+.textBoxMsg {
+    border: 0;
+    color:black;
+    background-color:lightyellow;
+}

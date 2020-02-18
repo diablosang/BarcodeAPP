@@ -1,0 +1,5 @@
+<div data-options="dxView : { name: 'About', title: 'About' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <img src="images/logon.jpg" onclick="TestImageClick()" style="width:100px;height:100px"/>
+    </div>
+</div>

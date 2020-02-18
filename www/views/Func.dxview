@@ -1,0 +1,12 @@
+<div data-options="dxView : { name: 'Func', title: '功能目录' } " >
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="AsapmentView2">
+    <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
+      <div id="divMenu">        
+      </div>
+    </div>
+    <div id="popGroup" data-bind="dxPopup: popupGroupOption">
+      <div id="listGroup" data-bind="dxList: listGroupOption">
+    </div>
+    <!--<div id="asGroup"  data-bind="dxActionSheet: asGroupOption"></div>-->
+  </div>
+</div>

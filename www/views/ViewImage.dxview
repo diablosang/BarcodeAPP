@@ -1,0 +1,5 @@
+<div data-options="dxView : { name: 'ViewImage', title: 'ViewImage' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+            <img id="imgFullView" />
+    </div>
+</div>

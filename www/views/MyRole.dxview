@@ -1,0 +1,5 @@
+<div data-options="dxView : { name: 'MyRole', title: SysMsg.myrole } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div id="gridMain" data-bind="dxDataGrid: gridOption"></div>
+    </div>
+</div>

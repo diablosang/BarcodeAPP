@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<link rel="dx-theme" data-theme="android5.light" href="css/dx.android5.light.css" data-active="false"/>
+    <link rel="stylesheet" type="text/css" href="css/dx.spa.css" />
+    <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
+    <link rel="dx-theme" data-theme="generic.light" href="css/dx.light.css" data-active="true" />
+<link rel="dx-theme" data-theme="generic.light.compact" href="css/dx.light.compact.css" />
+    <link rel="dx-theme" data-theme="generic.contrast" href="css/dx.contrast.css" />
+    <link rel="dx-theme" data-theme="generic.contrast.compact" href="css/dx.contrast.compact.css" />
+    <link rel="dx-theme" data-theme="generic.dark.compact" href="css/dx.dark.compact.css" />
+    <link rel="dx-theme" data-theme="generic.light.compact" href="css/dx.light.compact.css" />
+
+    <!---->
+    <!---->
+
+    <title>Mobile</title>
+    <meta charset="utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+
+    <link href="css/Trusteem.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <!--<![endif]-->
+    <script type="text/javascript" src="js/knockout-3.4.0.js"></script>
+    <!-- Read the Localization section of the migration guide for more details http://dxpr.es/1TXqrVS -->
+    <script type="text/javascript" src="js/cldr.min.js"></script>
+    <script type="text/javascript" src="js/cldr/event.min.js"></script>
+    <script type="text/javascript" src="js/cldr/supplemental.min.js"></script>
+    <script type="text/javascript" src="js/globalize.min.js"></script>
+    <script type="text/javascript" src="js/globalize/number.min.js"></script>
+    <script type="text/javascript" src="js/globalize/date.min.js"></script>
+    <script type="text/javascript" src="js/globalize/message.min.js"></script>
+    <script type="text/javascript" src="js/globalize/currency.min.js"></script>
+    <script type="text/javascript" src="js/dx.all.js"></script>
+    <!--<script type="text/javascript" src="js/dx.all.debug.js"></script>-->
+    <script type="text/javascript" src="js/asapment.js?ver=3.6.1"></script>
+    <!--<script src="js/baidu.js"></script>-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=1TUtPPXIFGsuCZ1H4zN52FWGkjWfnUSS"></script>
+    <!--<script src="js/localization/dx.messages.zh.js"></script>-->
+    <!-- Application -->
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script type="text/javascript" src="app.config.js?appVer=3.6.1"></script>
+    <script type="text/javascript" src="lang.js?ver=3.6.1"></script>
+    <script type="text/javascript" src="index.js?ver=3.6.1"></script>
+    <link href="css/Trusteem.css?ver=3.6.1" rel="stylesheet" />
+    <!-- Layouts -->
+    <link rel="stylesheet" type="text/css" href="layouts/Navbar/NavbarLayout.css" />
+    <link rel="dx-template" type="text/html" href="layouts/Navbar/NavbarLayout.html" />
+    <script type="text/javascript" src="layouts/Navbar/NavbarLayout.js"></script>
+
+
+
+
+    <!-- Views -->
+
+    <script type="text/javascript" src="views/Login.js"></script>
+    <link rel="dx-template" type="text/html" href="views/Login.dxview" />
+    <link href="views/Login.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="views/DataWindow.js"></script>
+    <link rel="dx-template" type="text/html" href="views/DataWindow.dxview" />
+
+    <script type="text/javascript" src="views/Config.js"></script>
+    <link rel="dx-template" type="text/html" href="views/Config.dxview" />
+
+
+    <script type="text/javascript" src="views/Dash.js"></script>
+    <link rel="dx-template" type="text/html" href="views/Dash.dxview" />
+
+    <script type="text/javascript" src="views/Fav.js"></script>
+    <link rel="dx-template" type="text/html" href="views/Fav.dxview" />
+
+    <script type="text/javascript" src="views/Func.js"></script>
+    <link rel="dx-template" type="text/html" href="views/Func.dxview" />
+
+    <script type="text/javascript" src="views/FormEdit.js"></script>
+    <link rel="dx-template" type="text/html" href="views/FormEdit.dxview" />
+
+    <script type="text/javascript" src="views/FormList.js"></script>
+    <link rel="dx-template" type="text/html" href="views/FormList.dxview" />
+
+    <script type="text/javascript" src="views/BIView.js"></script>
+    <link rel="dx-template" type="text/html" href="views/BIView.dxview" />
+
+    <script type="text/javascript">
+        //window.onunload = onunload_handler;
+        function onunload_handler() {
+            var u = sessionStorage.getItem("username");
+            var url = serviceURL + "/Api/Asapment/Logoff?UserName=" + u;
+            $.ajax({
+                type: 'GET',
+                url: url,
+                cache: false,
+                success: function (data, textStatus) {
+
+                },
+                error: function (xmlHttpRequest, textStatus, errorThrown) {
+
+                }
+            });
+        }
+
+
+        DevExpress.config({ forceIsoDateParsing: true });
+    </script>
+
+    <script type="text/javascript" src="views/FormDetail.js"></script>
+    <link rel="dx-template" type="text/html" href="views/FormDetail.dxview" />
+
+    <link href="views/UserCenter.css" rel="stylesheet" />
+    <script type="text/javascript" src="views/UserCenter.js"></script>
+    <link rel="dx-template" type="text/html" href="views/UserCenter.dxview" />
+
+    <script type="text/javascript" src="views/ViewImage.js"></script>
+    <link rel="dx-template" type="text/html" href="views/ViewImage.dxview" />
+
+    <script type="text/javascript" src="views/ChangePassword.js"></script>
+    <link rel="dx-template" type="text/html" href="views/ChangePassword.dxview" />
+
+    <script type="text/javascript" src="views/MyRole.js"></script>
+    <link rel="dx-template" type="text/html" href="views/MyRole.dxview" />
+
+    <script type="text/javascript" src="views/About.js"></script>
+    <link rel="dx-template" type="text/html" href="views/About.dxview" />
+
+    <link href="views/NBI.css?ver=3.6.1" rel="stylesheet" />
+    <script type="text/javascript" src="views/NBI.js?ver=3.6.1"></script>
+    <link rel="dx-template" type="text/html" href="views/NBI.dxview?ver=3.6.1" />
+
+    <script type="text/javascript" src="views/ORGSelect.js"></script>
+    <link rel="dx-template" type="text/html" href="views/ORGSelect.dxview" />
+
+    <script type="text/javascript" src="views/BarcodeMenu.js"></script>
+    <link rel="dx-template" type="text/html" href="views/BarcodeMenu.dxview" />
+
+    <script type="text/javascript" src="views/D_INQ.js"></script>
+    <link rel="dx-template" type="text/html" href="views/D_INQ.dxview" />
+
+</head>
+<body>
+    <input hidden="hidden" value="http://218.104.52.26/AsapmentWebAPI" id="WebApiServerURL" /><!--http://dev.trusteem.com:20020/AsapmentWebAPI-->
+    <input id="fileSelector" type="file" style="display:none" />
+    <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">
+        <div id="innerdiv" style="position:absolute;">
+            <img id="bigimg" style="border:5px solid #fff;" src="" />
+        </div>
+    </div>
+</body>
+
+</html>
+

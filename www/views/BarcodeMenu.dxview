@@ -1,0 +1,9 @@
+<div data-options="dxView : { name: 'BarcodeMenu', title: 'BarcodeMenu' } " >
+  <div data-bind="dxCommand: { title: '注销', id: 'btnLogoff',onExecute:logOff}"></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+      <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
+        <div id="divMenu">
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div data-options="dxView : { name: 'Fav', title: '收藏夹'} ">
+  <div data-options="dxContent : { targetPlaceholder: 'content' } " class="AsapmentView2">
+    <div data-bind="dxScrollView: {useNative:false,showScrollbar:'never' }" class="ItemList-ScrollView">
+      <div class="MenuGP">
+        <div class="MenuGH">
+          <img src="images/fav.png"/>
+          <div id="spanFav">收藏夹</div>
+        </div>
+        <table id="tbM1" class="MenuGCTB">
+        </table>
+      </div>
+      <div class="MenuGP">
+        <div class="MenuGH">
+          <img src="images/recent.png"/>
+          <div id="spanRecent">最近访问的功能</div>
+        </div>
+        <table id="tbM2" class="MenuGCTB">
+        </table>
+      </div>
+      <div class="MenuGP">
+        <div class="MenuGH">
+          <img src="images/popular.png"/>
+          <div id="spanMost">最常使用的功能</div>
+        </div>
+        <table id="tbM3" class="MenuGCTB">
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

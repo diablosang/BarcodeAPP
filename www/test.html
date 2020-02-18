@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="js/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+    <button onclick="javascript:test()">asadasd</button>
+</body>
+</html>
+<script>
+    function test()
+    {
+        var data = "{ f1: \"123\", f2: \"456\"}";
+        var url = "";
+        $.ajax({
+            type: 'GET',
+            url: url,
+            cache: false,
+            success: function (data, textStatus) {
+                alert("1");
+            },
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                ServerError(xmlHttpRequest.responseText);
+            }
+        });
+    }
+</script>

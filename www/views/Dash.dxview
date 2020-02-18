@@ -1,0 +1,55 @@
+<div data-options="dxView : { name: 'Dash', title: '待办事项'} " style="height:100%">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="AsapmentView" style="height:100%">
+        <div class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+        <div data-bind="dxScrollView: {useNative:false,showScrollbar:'never' }" class="ItemList-ScrollView">
+            <!--<div id="galDash" data-bind="dxGallery: galleryOptions" style="height: 150px"></div>-->
+            <div id="divTab" data-bind="dxTabs: tabOptions" class="DashTab"></div>
+            <div style="background-color:white">
+                <div id="listDash" data-bind="dxList: listOptions">
+                    <div data-options="dxTemplate: {name: 'item'}" data-bind="css:GetDashCSS($data.CREDAT)">
+                        <table width="100%" style="table-layout: fixed'">
+                            <tr>
+                                <td width="24px" align="left" valign="middle">
+                                    <img data-bind="attr:{src:GetIconImage($data.IMAGEID)}" style="width:24px;height:24px; " />
+                                </td>
+                                <td>
+                                    <div style="margin-left:10px;">
+                                        <div data-bind="text: GetDashText($data)"></div>
+                                        <div data-bind="text: GetDashText2($data)" class="TextSmall"></div>
+                                        <div data-bind="text: GetDashText3($data)" class="TextSmall"></div>
+                                    </div>
+                                </td>
+                                <td align="center" valign="middle" style="font-size:small" width="100px" align="right">
+                                    <div data-bind="text: GetDateString($data.CREDAT)" class="TextSmall"></div>
+                                    <div data-bind="text: GetTimeString($data.CREDAT)" class="TextSmall"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="listNotice" data-bind="dxList: listNoticeOptions" style="display:none">
+                    <div data-options="dxTemplate: {name: 'item'}">
+                        <table width="100%" style="table-layout: fixed'">
+                            <tr>
+                                <td width="24px" align="left" valign="middle">
+                                    <img data-bind="attr:{src:GetIconImage($data.IMAGEID)}" style="width:24px;height:24px; " />
+                                </td>
+                                <td>
+                                    <div style="margin-left:10px;">
+                                        <div data-bind="text: GetDashText($data)"></div>
+                                        <div data-bind="text: $data.DOCNO" class="TextSmall"></div>
+                                        <div data-bind="text: $data.MAILTITLE" class="TextSmall"></div>
+                                    </div>
+                                </td>
+                                <td align="center" valign="middle" style="font-size:small" width="100px" align="right">
+                                    <div data-bind="text: GetDateString($data.CREDAT)" class="TextSmall"></div>
+                                    <div data-bind="text: GetTimeString($data.CREDAT)" class="TextSmall"></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

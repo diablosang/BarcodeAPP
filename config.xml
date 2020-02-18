@@ -1,0 +1,104 @@
+﻿<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.hxhx.barcode" version="0.1.0" versionCode="">
+  <name>华西化纤条码</name>
+  <description>华西化纤条码</description>
+  <author email="dev@trusteem.com" href="http://www.trusteem.com.cn">Trusteem.com</author>
+  <preference name="phonegap-version" value="cli-8.0.0" />
+  <preference name="permissions" value="none" />
+  <preference name="SplashScreen" value="splash" />
+  <preference name="SplashScreenDelay" value="60000" />
+  <preference name="AutoHideSplashScreen" value="false" />
+  
+  <!--<preference name="orientation" value="portrait" />-->
+  <preference name="orientation" value="default" />
+  <preference name="DisallowOverscroll" value="true" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
+  <preference name="StatusBarBackgroundColor" value="#00243E" />
+
+  <access origin="*" />
+  <!--<plugin spec="http://github.com/don/cordova-filechooser.git" source="git" />-->
+  <plugin name="cordova-plugin-whitelist" />
+  <plugin name="cordova-plugin-splashscreen" onload="true" version="3.2.2"/>
+  <plugin name="cordova-plugin-ios-longpress-fix" />
+  <plugin name="cordova-plugin-statusbar" onload="true" />
+  <plugin name="cordova-plugin-camera" spec="~4.0.3" />
+  <plugin name="phonegap-plugin-barcodescanner" />  
+  <plugin name="jpush-phonegap-plugin">
+    <param name="APP_KEY" value="cbb836728e7ec6484e053022" />
+  </plugin>
+  <plugin name="cordova-plugin-app-version" />
+  <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
+  
+  <icon src="res/icon/icon.png" />
+  <platform name="ios">
+     <icon src="res/icon/ios/icon-1024.png" platform="ios" width="1024" height="1024" />
+    <!-- iPhone 6 / 6+ -->
+    <icon src="res/icon/ios/icon-60@3x.png" platform="ios" width="180" height="180" />
+
+    <!-- iPhone / iPod Touch  -->
+    <icon src="res/icon/ios/icon-60.png" platform="ios" width="60" height="60" />
+    <icon src="res/icon/ios/icon-60@2x.png" platform="ios" width="120" height="120" />
+
+    <!-- iPad -->
+    <icon src="res/icon/ios/icon-76.png" platform="ios" width="76" height="76" />
+    <icon src="res/icon/ios/icon-76@2x.png" platform="ios" width="152" height="152" />
+    <icon src="res/icon/ios/icon-83.5@2x.png" platform="ios" width="167" height="167" />
+
+    <!-- Settings Icon -->
+    <icon src="res/icon/ios/icon-small.png" platform="ios" width="29" height="29" />
+    <icon src="res/icon/ios/icon-small@2x.png" platform="ios" width="58" height="58" />
+    <icon src="res/icon/ios/icon-small@3x.png" platform="ios" width="87" height="87" />
+
+    <!-- Spotlight Icon -->
+    <icon src="res/icon/ios/icon-40.png" platform="ios" width="40" height="40" />
+    <icon src="res/icon/ios/icon-40@2x.png" platform="ios" width="80" height="80" />
+    <icon src="res/icon/ios/icon-40@3x.png" platform="ios" width="120" height="120" />
+    <!-- iPhone and iPod touch -->
+    <splash src="res/screen/ios/Default.png" platform="ios" width="320" height="480" />
+    <splash src="res/screen/ios/Default@2x.png" platform="ios" width="640" height="960" />
+
+    <!-- iPhone 5 / iPod Touch (5th Generation) -->
+    <splash src="res/screen/ios/Default-568h@2x.png" platform="ios" width="640" height="1136" />
+
+    <!-- iPhone 6 -->
+    <splash src="res/screen/ios/Default-667h@2x.png" platform="ios" width="750" height="1334" />
+    <splash src="res/screen/ios/Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
+    <splash src="res/screen/ios/Default-Landscape-736h@3x.png" platform="ios" width="2208" height="1242" />
+
+    <!-- iPad -->
+    <splash src="res/screen/ios/Default-Portrait.png" platform="ios" width="768" height="1024" />
+    <splash src="res/screen/ios/Default-Landscape.png" platform="ios" width="1024" height="768" />
+
+    <!-- Retina iPad -->
+    <splash src="res/screen/ios/Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
+    <splash src="res/screen/ios/Default-Landscape@2x.png" platform="ios" width="2048" height="1536" />
+    
+    <preference name="prerendered-icon" value="false" />
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+      <string>APP将通过摄像头扫描二维码，以及让用户拍摄照片上传</string>
+    </edit-config>
+    <edit-config target="NSPhotoLibraryUsageDescription" file="*-Info.plist" mode="merge">
+      <string>APP将让用户选择照片上传系统</string>
+    </edit-config>
+    <edit-config target="NSPhotoLibraryAddUsageDescription" file="*-Info.plist" mode="merge">
+      <string>APP将让用户选择照片上传系统</string>
+    </edit-config>
+    <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+      <string>APP将获取用户的当前地理位置</string>
+    </edit-config>
+    <edit-config target="CFBundleIdentifier" file="*-Info.plist" mode="merge">
+      <string>com.hxhx.barcode</string>
+    </edit-config>
+  </platform>
+  <platform name="android">
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="res/screen/android/splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xhdpi"/>
+    <splash src="res/screen/android/splash-land-xhdpi.png" density="land-xxhdpi"/>
+    <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
+    <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xxhdpi"/>
+  </platform>
+
+  <allow-navigation href="*" />
+  <allow-intent href="*" />
+</widget>

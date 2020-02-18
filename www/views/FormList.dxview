@@ -1,0 +1,12 @@
+<div data-options="dxView : { name: 'FormList', title: 'FormList'} ">
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+        <div id="tbMain" data-bind="dxToolbar: toolBarOption"></div>
+        <div id="gridMain" data-bind="dxDataGrid: gridOption" class="GridScroll"></div>
+        <div id="popSearch" data-bind="dxPopup: searchPopupOption">
+                <div id="svSearch" data-bind="dxScrollView: { }" class="ItemList-ScrollView2">
+                    <div id="fsSearch" class="dx-fieldset" style="margin-left:0;margin-right:0;padding-left:0;padding-right:0;"></div>
+                </div>
+        </div>
+    </div>
+</div>
