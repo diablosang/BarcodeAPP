@@ -6,8 +6,8 @@
         serviceURL: ko.observable(""),
         lookupServiceOption: {
             dataSource: [
-                { SERVICE: "http://218.104.52.26/AsapmentWebAPI", DES: "华西化纤ERP正式库" },
-                { SERVICE: "http://218.104.52.26/AsapmentWebAPITest", DES: "华西化纤ERP测试库" },
+                { SERVICE: "http://218.104.52.26/WMSWebAPI", DES: "华西化纤WMS正式库" },
+                { SERVICE: "http://218.104.52.26/WMSWebAPITest", DES: "华西化纤WMS测试库" },
                 { SERVICE: "http://localhost:61862", DES: "开发调试" }
             ],
             displayExpr: "DES",
