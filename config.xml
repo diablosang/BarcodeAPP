@@ -1,6 +1,6 @@
-﻿<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.hxhx.barcode" version="0.1.5" versionCode="000104">
-  <name>华西化纤条码</name>
-  <description>华西化纤条码</description>
+﻿<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.hxhx.barcode" version="0.1.6" versionCode="000106">
+  <name>WMS</name>
+  <description>WMS</description>
   <author email="dev@trusteem.com" href="http://www.trusteem.com.cn">Trusteem.com</author>
   <preference name="phonegap-version" value="cli-8.0.0" />
   <preference name="permissions" value="none" />
@@ -24,6 +24,7 @@
   <plugin name="cordova-plugin-ios-longpress-fix" />
   <plugin name="cordova-plugin-keyboard" />  
   <plugin name="cordova-plugin-app-version" />
+  <plugin name="cordova-plugin-broadcaster" />
   <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
   
   <icon src="res/icon/icon.png" />
