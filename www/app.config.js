@@ -1,4 +1,4 @@
-var appVer = "0.1.6";
+var appVer = "0.1.7";
 var nullDeviceType = "PC";
 var asUserList = [];
 var pushChn = "";

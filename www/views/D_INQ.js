@@ -144,12 +144,15 @@
         editor.focus();
         var txtMsg = $("#txtMsg").dxTextBox("instance");
         txtMsg.option("value", "请扫描条码");
-        window.broadcaster.addEventListener("com.android.server.scannerservice.broadcast", ScanDataReveive);
-    }
 
-    function ScanDataReveive(e) {
-        var txtMsg = $("#txtMsg").dxTextBox("instance");
-        txtMsg.option("value", JSON.stringify(e));
+        var listener = function (e) {
+            ServerError("broadcast");
+            var txtMsg = $("#txtMsg").dxTextBox("instance");
+            txtMsg.option("value", JSON.stringify(e));
+        }
+
+        window.broadcaster.addEventListener("com.android.server.scannerservice.broadcast", listener);
+        window.broadcaster.addEventListener("scannerdata", listener);
     }
 
     function InitBarcode() {
