@@ -37,15 +37,16 @@
                 url: url,
                 cache: false,
                 success: function (data, textStatus) {
-                    var view = "Login?auto=0";
-                    var option = { root: true };
-                    Mobile.app.navigate(view, option);
+                    
                 },
                 error: function (xmlHttpRequest, textStatus, errorThrown) {
-                    ServerError(xmlHttpRequest.responseText);
+                    //ServerError(xmlHttpRequest.responseText);
                 }
             });
-            return;
+
+            var view = "Login?auto=0";
+            var option = { root: true };
+            Mobile.app.navigate(view, option);
         }
     };
 
@@ -53,22 +54,15 @@
 
     function BindData(viewModel) {
         try {
-            var sessionStorage = window.sessionStorage;
-            var u = sessionStorage.getItem("username");
-            //var url = serviceURL + "/Api/Asapment/GetUserMenu?UserName=" + u + "&PARENT=" + viewModel.parentFunc();
-            var url = serviceURL + "/Api/Barcode/GetUserMenu?UserName=" + u;
-            $.ajax({
-                type: 'GET',
-                url: url,
-                cache: false,
-                success: function (data, textStatus) {
-                    asapmentMenuData = data;
-                    BindUI(data);
-                },
-                error: function (xmlHttpRequest, textStatus, errorThrown) {
-                    ServerError(xmlHttpRequest.responseText);
-                }
+            var postData = {};
+            PostServer("Barcode/GetUserMenu", postData, function (result) {
+                asapmentMenuData = result.data;
+                BindUI(asapmentMenuData);
             });
+            //if (result.success) {
+            //    asapmentMenuData = result.data;
+            //    BindUI(asapmentMenuData);
+            //}
         }
         catch (e) {
             ServerError(xmlHttpRequest.responseText);
@@ -162,9 +156,9 @@
                             }
                             var tc = tr.cells[curCell - 1];
                             var img = GetIconImage(d3.IMAGEID);
-                            var openView = d2.DEVOBJ;
-                            if (d2.DEVPARAM != null && d2.DEVPARAM != "") {
-                                openView = openView + "?DEVPARAM=" + d2.DEVPARAM;
+                            var openView = d3.DEVOBJ;
+                            if (d3.DEVPARAM != null && d3.DEVPARAM != "") {
+                                openView = openView + "?DEVPARAM=" + d3.DEVPARAM;
                             }
                             var action = "OpenBarcodeView('" + openView + "')";
 

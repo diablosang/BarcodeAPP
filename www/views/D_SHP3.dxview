@@ -1,10 +1,10 @@
-<div data-options="dxView : { name: 'BarcodeMenu', title: 'BarcodeMenu' } " >
-  <div data-bind="dxCommand: { title: '注销', id: 'btnLogoff',onExecute:logOff}"></div>
+<div data-options="dxView : { name: 'D_SHP3', title: '条码发货' } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
       <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: false }"></div>
       <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
-        <div id="divMenu">
-        </div>
+        <div id="formMain" data-bind="dxForm:formOption"></div>
+        <div id="txtMsg" data-bind="dxTextBox:msgOption"></div>
+        <div data-options="dxViewPlaceholder: { viewName: 'Partial_BarInfo' }"></div>
       </div>
     </div>
 </div>

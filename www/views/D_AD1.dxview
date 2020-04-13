@@ -1,7 +1,7 @@
-<div data-options="dxView : { name: 'D_INQ', title: '条码查询' } " >
+<div data-options="dxView : { name: 'D_AD1', title: '条码失效扫描' } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
         <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: false }"></div>
-        <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView" >
+        <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
             <div id="txtBarcode" data-bind="dxTextBox:barcodeOption"></div>
             <div id="txtMsg" data-bind="dxTextBox:msgOption"></div>
             <div id="formMain" data-bind="dxForm:formOption"></div>

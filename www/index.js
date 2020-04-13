@@ -1,5 +1,11 @@
 ﻿window.Mobile = window.Mobile || {};
 
+if (!Array.prototype.find) {
+    Array.prototype.find = function (callback) {
+        return callback && (this.filter(callback) || [])[0];
+    };
+}
+
 var serverVer;
 var asapmentMenuData;
 

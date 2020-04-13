@@ -7,6 +7,7 @@
         username: ko.observable(""),
         password: ko.observable(""),
         viewShown: function () {
+            currentUser = "";
             SetLanguage();
             var w = $("#inputBox1").width();
             $(".LG_TextBox").width(w - 33);

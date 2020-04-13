@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="dx-theme" data-theme="android5.light" href="css/dx.android5.light.css" data-active="false"/>
+    <link rel="dx-theme" data-theme="android5.light" href="css/dx.android5.light.css" data-active="false" />
     <link rel="stylesheet" type="text/css" href="css/dx.spa.css" />
     <link rel="stylesheet" type="text/css" href="css/dx.common.css" />
     <link rel="dx-theme" data-theme="generic.light" href="css/dx.light.css" data-active="true" />
@@ -41,16 +41,17 @@
     <script type="text/javascript" src="js/globalize/currency.min.js"></script>
     <script type="text/javascript" src="js/dx.all.js"></script>
     <!--<script type="text/javascript" src="js/dx.all.debug.js"></script>-->
-    <script type="text/javascript" src="js/asapment.js?ver=3.6.1"></script>
+    <script type="text/javascript" src="js/asapment.js?ver=0.1.7"></script>
+    <script type="text/javascript" src="js/wms.js?ver=0.1.7"></script>
     <!--<script src="js/baidu.js"></script>-->
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=1TUtPPXIFGsuCZ1H4zN52FWGkjWfnUSS"></script>
     <!--<script src="js/localization/dx.messages.zh.js"></script>-->
     <!-- Application -->
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <script type="text/javascript" src="app.config.js?appVer=3.6.1"></script>
-    <script type="text/javascript" src="lang.js?ver=3.6.1"></script>
-    <script type="text/javascript" src="index.js?ver=3.6.1"></script>
-    <link href="css/Trusteem.css?ver=3.6.1" rel="stylesheet" />
+    <script type="text/javascript" src="app.config.js?appVer=0.1.7"></script>
+    <script type="text/javascript" src="lang.js?ver=0.1.7"></script>
+    <script type="text/javascript" src="index.js?ver=0.1.7"></script>
+    <link href="css/Trusteem.css?ver=0.1.7" rel="stylesheet" />
     <!-- Layouts -->
     <link rel="stylesheet" type="text/css" href="layouts/Navbar/NavbarLayout.css" />
     <link rel="dx-template" type="text/html" href="layouts/Navbar/NavbarLayout.html" />
@@ -132,9 +133,9 @@
     <script type="text/javascript" src="views/About.js"></script>
     <link rel="dx-template" type="text/html" href="views/About.dxview" />
 
-    <link href="views/NBI.css?ver=3.6.1" rel="stylesheet" />
-    <script type="text/javascript" src="views/NBI.js?ver=3.6.1"></script>
-    <link rel="dx-template" type="text/html" href="views/NBI.dxview?ver=3.6.1" />
+    <link href="views/NBI.css?ver=0.1.7" rel="stylesheet" />
+    <script type="text/javascript" src="views/NBI.js?ver=0.1.7"></script>
+    <link rel="dx-template" type="text/html" href="views/NBI.dxview?ver=0.1.7" />
 
     <script type="text/javascript" src="views/ORGSelect.js"></script>
     <link rel="dx-template" type="text/html" href="views/ORGSelect.dxview" />
@@ -145,8 +146,29 @@
     <script type="text/javascript" src="views/D_INQ.js"></script>
     <link rel="dx-template" type="text/html" href="views/D_INQ.dxview" />
 
+
+    <script type="text/javascript" src="views/D_AD1.js"></script>
+    <link rel="dx-template" type="text/html" href="views/D_AD1.dxview" />
+
+		<script type="text/javascript" src="views/D_RCP.js"></script>
+		<link rel="dx-template" type="text/html" href="views/D_RCP.dxview"/>
+
+		<script type="text/javascript" src="views/D_TRAN.js"></script>
+		<link rel="dx-template" type="text/html" href="views/D_TRAN.dxview"/>
+
+		<script type="text/javascript" src="views/D_SHP3.js"></script>
+		<link rel="dx-template" type="text/html" href="views/D_SHP3.dxview"/>
+
+		<script type="text/javascript" src="views/D_QC.js"></script>
+		<link rel="dx-template" type="text/html" href="views/D_QC.dxview"/>
+
+		<script type="text/javascript" src="views/D_PAL.js"></script>
+		<link rel="dx-template" type="text/html" href="views/D_PAL.dxview"/>
+
+		<script type="text/javascript" src="views/Partial_BarInfo.js"></script>
+		<link rel="dx-template" type="text/html" href="views/Partial_BarInfo.dxview"/>
 </head>
-<body>
+<body>    
     <input hidden="hidden" value="http://218.104.52.26/AsapmentWebAPI" id="WebApiServerURL" /><!--http://dev.trusteem.com:20020/AsapmentWebAPI-->
     <input id="fileSelector" type="file" style="display:none" />
     <div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:2;width:100%;height:100%;display:none;">

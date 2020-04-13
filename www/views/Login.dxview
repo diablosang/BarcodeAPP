@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'Login', title: '' } ">
   <div data-options="dxContent : { targetPlaceholder: 'content' } " class="Login_View">
-    <div class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+    <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: {visible:false}"></div>
     <div class="Login_Box">
       <img id="logoImg" class="Login_Logo" align="center" src="" onerror="javascript:this.src='images/logo.png?v=1'" onclick="LogoClicked()"/>
       <!--<div class="LG_Radio" data-bind="dxRadioGroup: { items: [ '企业内部账户', '企荫通行证'], layout:'horizontal' }"></div>-->

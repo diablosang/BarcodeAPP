@@ -1,14 +1,17 @@
-﻿Mobile.D_INQ = function (params) {
+﻿Mobile.D_AD1 = function (params) {
     "use strict";
 
     var viewModel = {
         hideFoot: true,
+        fid: "D_AD1",
         barcodeOption: {
             onKeyDown: function (e) {
                 KeyDown(e);
             }
         },
         msgOption: msgTextEditor,
+        config: {},
+        scanData:[],
         formOption: {
             colCount: 2,
             colCountByScreen: { lg: 2, md: 2, sm: 2, xs: 2 },
@@ -22,7 +25,7 @@
                 {
                     label: { text: "物料" },
                     dataField: "CODE_ITEM",
-                    editorType:"dxTextBox",
+                    editorType: "dxTextBox",
                     editorOptions: formReadOnlyTextEditor,
                     colSpan: 2
                 },
@@ -57,7 +60,7 @@
                     itemType: "group",
                     caption: "条码信息",
                     colCountByScreen: { lg: 2, md: 2, sm: 2, xs: 2 },
-                    colSpan:2,
+                    colSpan: 2,
                     items: [
                         {
                             label: { text: "类型" },
@@ -133,12 +136,6 @@
         }
     };
 
-    function InitView() {
-        var txtMsg = $("#txtMsg").dxTextBox("instance");
-        txtMsg.option("value", "请扫描条码");
-        InitBarcode();
-    }
-
     function KeyDown(e) {
         switch (e.event.keyCode) {
             //F4
@@ -154,28 +151,62 @@
         }
     }
 
+    function InitView() {
+        var form = $("#formMain").dxForm("instance");
+        form.focus();
+        var txtMsg = $("#txtMsg").dxTextBox("instance");
+        txtMsg.option("value", "请扫描条码");
+        viewModel.scanData = [];
+        form.option("formData", { CODE_BAR: "" });
+        var postData = {
+            fid: viewModel.fid
+        }
+
+        PostServer("Barcode/Init", postData, function (result) {
+            viewModel.config = result.data;
+            viewModel.scanData = [];
+            InitBarcode();
+        }, function (message) { });
+    }
+
     function InitBarcode() {
         var editor = $("#txtBarcode").dxTextBox("instance");
         editor.option("value", "");
         editor.focus();
     }
 
+    function ShowMessage(e) {
+        var txtMsg = $("#txtMsg").dxTextBox("instance");
+        txtMsg.option("value", e);
+    }
+
     function BarcodeScan() {
         var txtMsg = $("#txtMsg").dxTextBox("instance");
         txtMsg.focus();
-
         var txtBarcode = $("#txtBarcode").dxTextBox("instance");
         var barcode = txtBarcode.option("value");
 
         var postData = {
-            data: barcode
-        }
+            bartype: "BARCODE",
+            barcode: barcode
+        };
 
-        PostServer("Barcode/GetBarcodeInfo", postData, function (result) {
-            DisplayInfo(result.data[0]);
+        PostServer("Barcode/Scan", postData, function (result) {
+            ProcessData(result.data[0]);
         });
-
         InitBarcode();
+    }
+
+    function ProcessData(data) {
+        var findData = viewModel.scanData.find(function (n) { return n.CODE_BAR == data.CODE_BAR });
+        if (findData != null) {
+            viewModel.scanData.pop(findData);
+        }
+        else {
+            viewModel.scanData.push(data); 
+        }
+        ShowMessage("已扫描" + viewModel.scanData.length + "个条码");
+        DisplayInfo(data);
     }
 
     function DisplayInfo(data) {
@@ -189,6 +220,24 @@
         formData.STATUSINFO = ASGetString(formData.STATUS) + " / " + ASGetString(formData.STATUS_DESC);
         formData.QCINFO = ASGetString(formData.TYPE_QC) + " / " + ASGetString(formData.TYPE_QC_DESC);
         form.option("formData", formData);
+    }
+
+    function Submit() {
+        DevExpress.ui.dialog.confirm("您确定要提交吗？").done(function (dialogResult) {
+            if (dialogResult) {
+                var postData = {
+                    fid: viewModel.fid,
+                    data: viewModel.scanData
+                };
+
+                PostServer("Barcode/Submit", postData, function (result) {
+                    InitView();
+                    ShowMessage("条码状态修改成功","success");
+                });
+                InitBarcode();
+            }
+        });
+        
     }
 
     return viewModel;

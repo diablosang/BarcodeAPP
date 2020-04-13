@@ -1,0 +1,6 @@
+<div data-options="dxView : { name: 'Partial_BarInfo', title: 'Partial_BarInfo' } ">
+    <div data-bind="with: modelBarInfo">
+        <div id="formBarInfo" data-bind="dxForm:formBarInfoOption"></div>
+        <div id="formBarInfo2" data-bind="dxForm:formBarInfo2Option"></div>
+    </div>
+</div>

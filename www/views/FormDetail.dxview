@@ -1,6 +1,6 @@
 <div data-options="dxView : { name: 'FormDetail', title: 'FormDetail' } " >
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
-        <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: indicatorVisible }"></div>
+        <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: false }"></div>
         <div id="toolbarDetail" data-bind="dxToolbar: toolBarOption"></div> 
         <div data-bind="dxScrollView: {useNative: false}" class="ItemList-ScrollView2 BG06">
             <div id="fsDetail" class="dx-fieldset"></div>

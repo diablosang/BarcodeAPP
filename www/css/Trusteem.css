@@ -359,3 +359,15 @@
     color:black;
     background-color:lightyellow;
 }
+
+.textBoxMsgSuccess {
+    border: 0;
+    color: white;
+    background-color: mediumseagreen;
+}
+
+.textBoxMsgError {
+    border: 0;
+    color: white;
+    background-color:orangered;
+}

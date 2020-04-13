@@ -1,24 +1,4 @@
-﻿var formReadOnlyTextEditor = {
-    inputAttr: {
-        class: "textBoxReadOnly"
-    },
-    elementAttr: {
-        class: "textBoxReadOnly"
-    },
-    readOnly: true
-}
-
-var msgTextEditor = {
-    inputAttr: {
-        class: "textBoxMsg"
-    },
-    elementAttr: {
-        class: "textBoxMsg"
-    },
-    readOnly: true
-}
-
-function createListControl(field, readonly, block) {
+﻿function createListControl(field, readonly, block) {
     var col = {
         dataField: field.FIELDNAME,
         caption: field.DES,
@@ -392,16 +372,12 @@ function OpenFile(fileID) {
 }
 
 function Logon(u, p) {
+    var indicator = $("#loadIndicator").dxLoadIndicator("instance");
+    indicator.option("visible", true);
+
     serverVer = CheckServerVersion();
     var sessionStorage = window.sessionStorage;
     var devicetype = DevExpress.devices.real().platform;
-
-    if (pushChn == "" && getCHNRetry < 3) {
-        getCHNRetry++;
-        setTimeout(function () {
-            Logon(u, p);
-        }, 1000);
-    }
 
     var postData = {
         UserName: u,
@@ -414,36 +390,36 @@ function Logon(u, p) {
     };
     var url = serviceURL + "/Api/Asapment/Logon2";
     var success = false;
+    
 
     $.ajax({
         type: 'POST',
         url: url,
         data: postData,
         cache: false,
-        async: false,
         success: function (data, textStatus) {
+            indicator.option("visible", false);
+            currentUser = u;
             success = true;
+
+            sessionStorage.removeItem("username");
+            sessionStorage.setItem("username", u);
+
+            var localStorage = window.localStorage;
+            localStorage.setItem("username", u);
+            localStorage.setItem("password", p);
+            var view = "BarcodeMenu";
+            var option = { root: true };
+            GetUserList(u);
+            Mobile.app.navigate(view, option);
+            return success;
         },
         error: function (xmlHttpRequest, textStatus, errorThrown) {
+            indicator.option("visible", false);
             success = false;
             ServerError(xmlHttpRequest.responseText);
         }
     });
-
-    if (success) {
-        sessionStorage.removeItem("username");
-        sessionStorage.setItem("username", u);
-
-        var localStorage = window.localStorage;
-        localStorage.setItem("username", u);
-        localStorage.setItem("password", p);
-        var view = "BarcodeMenu";
-        var option = { root: true };
-        GetUserList(u);
-        Mobile.app.navigate(view, option);
-    }
-
-    return success;
 }
 
 
@@ -491,4 +467,43 @@ function ASGetString(s) {
     }
 
     return s;
+}
+
+
+function PostServer(method, data,success,failed) {
+    var postData = data;
+    postData.userName = currentUser;
+    var url = serviceURL + "/Api/" + method;
+    var result = {};
+
+    var indicator = $("#loadIndicator").dxLoadIndicator("instance");
+    indicator.option("visible", true);
+    $.ajax({
+        type: 'POST',
+        data: postData,
+        url: url,
+        cache: false,
+        success: function (data, textStatus) {
+            indicator.option("visible", false);
+            result.success = true;
+            result.data = data;
+            success(result);
+        },
+        error: function (xmlHttpRequest, textStatus, errorThrown) {
+            indicator.option("visible", false);
+            var resp = JSON.parse(xmlHttpRequest.responseText);
+            var messsage = resp.Message;
+            if (resp.ExceptionMessage != null) {
+                messsage = resp.ExceptionMessage;
+            }
+            result.success = false;
+            result.message = messsage;
+            ServerError(messsage);
+            if (failed != null) {
+                failed(result);
+            }
+        }
+    });
+
+    return result;
 }
