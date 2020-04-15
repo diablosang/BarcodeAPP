@@ -4,6 +4,9 @@
     var viewModel = {
         hideFoot: true,
         fid: "D_PAL",
+        se: false,
+        seStart: "",
+        seEnd: "",
         msgOption: msgTextEditor,
         config: {},
         scanData: [],
@@ -34,6 +37,9 @@
         form.focus();
         var txtMsg = $("#txtMsg").dxTextBox("instance");
         txtMsg.option("value", "请扫描条码");
+        viewModel.se = false;
+        viewModel.seStart = "";
+        viewModel.seEnd = "";
         viewModel.scanData = [];
         viewModel.modelBarInfo.SetBarInfo({ data: {} });
         form.option("formData", { CODE_SHP: "", CODE_BOX: "", CLOSE: false });
@@ -59,6 +65,18 @@
             //F4
             case 115: {
                 Submit();
+                break;
+            }
+            //F5
+            case 116:
+            case 120: {
+                viewModel.se = !viewModel.se;
+                if (viewModel.se == true) {
+                    SetMessage("已开启头尾条码模式，请扫描第一个条码");
+                }
+                else {
+                    SetMessage("已取消头尾条码模式");
+                }
                 break;
             }
             //F6
@@ -107,6 +125,20 @@
         var form = $("#formMain").dxForm("instance");
         var formData = form.option("formData");
         var barcode = formData.CODE_BAR;
+
+        if (viewModel.se) {
+            if (viewModel.seStart == "") {
+                viewModel.seStart = barcode;
+                InitBarcode();
+                SetMessage("请扫描最后一个条码");
+                return;
+            }
+            else {
+                viewModel.seEnd = barcode;
+                BatchSE();
+                return;
+            }
+        }
 
         var postData = {
             bartype: "BARCODE",
@@ -195,6 +227,28 @@
 
 
         InitBarcode();
+    }
+
+    function BatchSE() {
+        var postData = {
+            seStart: viewModel.seStart,
+            seEnd: viewModel.seEnd
+        };
+
+        PostServer("Barcode/BatchSE", postData,
+            function (result) {
+                ProcessData(result.data);
+
+                if (viewModel.config.AUTOSUB == "1") {
+                    Submit();
+                }
+            }
+        );
+
+        InitBarcode();
+        viewModel.seStart = "";
+        viewModel.seEnd = "";
+        viewModel.se = false;
     }
 
     function Submit() {

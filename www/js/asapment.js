@@ -390,7 +390,7 @@ function Logon(u, p) {
     };
     var url = serviceURL + "/Api/Asapment/Logon2";
     var success = false;
-    
+
 
     $.ajax({
         type: 'POST',
@@ -470,7 +470,7 @@ function ASGetString(s) {
 }
 
 
-function PostServer(method, data,success,failed) {
+function PostServer(method, data, success, failed) {
     var postData = data;
     postData.userName = currentUser;
     var url = serviceURL + "/Api/" + method;
