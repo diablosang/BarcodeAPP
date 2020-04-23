@@ -127,6 +127,11 @@
         };
 
         PostServer("Barcode/Scan", postData, function (result) {
+            if (result.data[0]["TYPE_BAR"] == "T2" || result.data[0]["TYPE_BAR"] == "T3") {
+                BatchCNT(result.data[0]["CODE_BAR"]);
+                return;
+            }
+
             ProcessData(result.data);
             var msg = "";
             if (viewModel.devParam == "1") {
@@ -191,6 +196,30 @@
         PostServer("Barcode/Batch", postData,
             function (result) {
                 ProcessData(result.data);
+
+                if (viewModel.config.AUTOSUB == "1") {
+                    Submit();
+                }
+            },
+            function (result) {
+                if (viewModel.config.AUTOBT == "1") {
+                    viewModel.scanData.pop(postData);
+                }
+            }
+        );
+
+
+        InitBarcode();
+    }
+
+    function BatchCNT(code_bar) {
+        var postData = {
+            CODE_PBAR: code_bar
+        }
+        PostServer("Barcode/BatchCNT", postData,
+            function (result) {
+                var data = result.data;
+                ProcessData(data);
 
                 if (viewModel.config.AUTOSUB == "1") {
                     Submit();

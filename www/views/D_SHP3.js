@@ -227,7 +227,17 @@
         };
 
         PostServer("Barcode/Scan", postData, function (result) {
-            var remove = ProcessData(result.data);
+            if (result.data[0]["TYPE_BAR"] == "T2" || result.data[0]["TYPE_BAR"] == "T3") {
+                BatchCNT(result.data[0]["CODE_BAR"]);
+                return;
+            }
+
+            var data = result.data;
+            for (var i = 0; i < data.length; i++) {
+                data[i]["PAR8"] = viewModel.code_box;
+            }
+
+            var remove = ProcessData(data);
             if (remove > 0) {
                 return;
             }
@@ -320,7 +330,12 @@
         var postData = viewModel.scanData[viewModel.scanData.length - 1];
         PostServer("Barcode/Batch", postData,
             function (result) {
-                ProcessData(result.data);
+                var data = result.data;
+                for (var i = 0; i < data.length; i++) {
+                    data[i]["PAR8"] = viewModel.code_box;
+                }
+
+                ProcessData(data);
 
                 if (viewModel.config.AUTOSUB == "1") {
                     Submit();
@@ -345,7 +360,12 @@
 
         PostServer("Barcode/BatchSE", postData,
             function (result) {
-                ProcessData(result.data);
+                var data = result.data;
+                for (var i = 0; i < data.length; i++) {
+                    data[i]["PAR8"] = viewModel.code_box;
+                }
+
+                ProcessData(data);
 
                 if (viewModel.config.AUTOSUB == "1") {
                     Submit();
@@ -357,6 +377,34 @@
         viewModel.seStart = "";
         viewModel.seEnd = "";
         viewModel.se = false;
+    }
+
+    function BatchCNT(code_bar) {
+        var postData = {
+            CODE_PBAR: code_bar
+        }
+        PostServer("Barcode/BatchCNT", postData,
+            function (result) {
+                var data = result.data;
+                for (var i = 0; i < data.length; i++) {
+                    data[i]["PAR8"] = viewModel.code_box;
+                }
+
+                ProcessData(data);
+
+                if (viewModel.config.AUTOSUB == "1") {
+                    Submit();
+                }
+            },
+            function (result) {
+                if (viewModel.config.AUTOBT == "1") {
+                    viewModel.scanData.pop(postData);
+                }
+            }
+        );
+
+
+        InitBarcode();
     }
 
     function Submit() {
