@@ -171,9 +171,12 @@
         for (var i = 0; i < dataSet.length; i++) {
             data = dataSet[i];
             var findData = viewModel.scanData.find(function (n) { return n.CODE_BAR == data.CODE_BAR });
-            if (findData != null && dataSet.length == 1) {
-                viewModel.scanData.pop(findData);
-                remove++;
+            if (findData != null) {
+                if (dataSet.length == 1) {
+                    var index = viewModel.scanData.indexOf(findData);
+                    viewModel.scanData.splice(index, 1);
+                    remove++;
+                }
             }
             else {
                 viewModel.scanData.push(data);
