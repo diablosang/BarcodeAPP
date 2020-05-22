@@ -172,10 +172,13 @@
         for (var i = 0; i < viewModel.scanData.length; i++) {
             var sd = viewModel.scanData[i];
             countInfo.BAR_TOT++;
-            countInfo.QTY_TOT += sd.QTY;
+            var qtyTot = new Decimal(countInfo.QTY_TOT);
+            var qty = new Decimal(sd.QTY);
+            countInfo.QTY_TOT = qtyTot.plus(qty).toString();
             if (sd.CODE_ITEM == CODE_ITEM) {
                 countInfo.BAR_CUR++;
-                countInfo.QTY_CUR += sd.QTY;
+                var qtyCur = new Decimal(countInfo.QTY_CUR);
+                countInfo.QTY_CUR = qtyCur.plus(qty).toString();
             }
         }
 

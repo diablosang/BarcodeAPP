@@ -1,4 +1,4 @@
-var appVer = "1.0.1";
+var appVer = "1.1.0";
 var nullDeviceType = "PC";
 var asUserList = [];
 var pushChn = "";
@@ -24,6 +24,11 @@ window.Mobile = $.extend(true, window.Mobile, {
         "title": "我的",
         "onExecute": "#UserCenter",
         "icon": "preferences"
+      },
+      {
+        "title": "D_INQP",
+        "onExecute": "#D_INQP",
+        "icon": "d_inqp"
       }
     ],
     "navigationEN": [

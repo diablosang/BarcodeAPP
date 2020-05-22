@@ -1,0 +1,15 @@
+﻿<div data-options="dxView : { name: 'D_INQP', title: '托盘查询' } " >
+    <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
+        <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: false }"></div>
+        <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
+            <div id="txtBarcode" data-bind="dxTextBox:barcodeOption"></div>
+            <div id="txtMsg" data-bind="dxTextBox:msgOption"></div>
+            <div id="formMain" data-bind="dxForm:formOption"></div>
+            <div id="divTab" data-bind="dxTabs: tabOptions"></div>
+            <div>
+                <div id="gridBar" data-bind="dxDataGrid: gridBarOptions"></div>
+                <div id="gridItem" data-bind="dxDataGrid: gridItemOptions" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+</div>
