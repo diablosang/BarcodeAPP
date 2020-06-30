@@ -2,7 +2,7 @@
     <div data-options="dxContent : { targetPlaceholder: 'content' } " class="dx-content-background">
       <div id="loadIndicator" class="indicator" data-bind="dxLoadIndicator: { visible: false }"></div>
       <div data-bind="dxScrollView: { useNative:false,showScrollbar:'never'  }" class="ItemList-ScrollView">
-        <div id="formMain" data-bind="dxForm:formOption"></div>
+        <div id="formMain" data-bind="dxForm:formOption" style="width:100%"></div>
         <div id="txtMsg" data-bind="dxTextBox:msgOption"></div>
         <div data-options="dxViewPlaceholder: { viewName: 'Partial_BarInfo' }"></div>
       </div>

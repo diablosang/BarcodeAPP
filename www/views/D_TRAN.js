@@ -17,6 +17,30 @@
             colCountByScreen: { lg: 2, md: 2, sm: 2, xs: 2 },
             items: [
                 {
+                    label: { text: "工厂" },
+                    dataField: "CODE_PLANT",
+                    editorType: "dxSelectBox",
+                    editorOptions: {
+                        dataSource: [{ CODE_PLANT: "HXC" }],
+                        displayExpr: "CODE_PLANT",
+                        valueExpr: "CODE_PLANT",
+                        value: defaultPlant
+                    },
+                    colSpan: 1
+                },
+                {
+                    label: { text: "日期" },
+                    dataField: "DATE_INPUT",
+                    editorType: "dxDateBox",
+                    editorOptions: {
+                        width: "130",
+                        displayFormat: "yyyy-MM-dd",
+                        pickerType: "calendar",
+                        dateSerializationFormat: "yyyy-MM-dd"
+                    },
+                    colSpan: 1
+                },
+                {
                     label: { text: "库位" },
                     dataField: "CODE_LOC",
                     editorOptions: {
@@ -66,7 +90,7 @@
         viewModel.seEnd = "";
         viewModel.scanData = [];
         viewModel.modelBarInfo.SetBarInfo({ data: {} });
-        form.option("formData", {});
+        form.option("formData", { CODE_PLANT: defaultPlant, DATE_INPUT: GetDateString2(new Date()) });
         var postData = {
             fid: viewModel.fid
         }
@@ -365,10 +389,13 @@
 
         DevExpress.ui.dialog.confirm("您确定要提交吗？").done(function (dialogResult) {
             if (dialogResult) {
+                var formData = $("#formMain").dxForm("instance").option("formData");
                 var postData = {
                     fid: viewModel.fid,
                     CODE_LOCT: viewModel.code_loc,
                     CODE_SHELFT: viewModel.code_shelf,
+                    CODE_PLANT: formData.CODE_PLANT,
+                    DATE_INPUT: formData.DATE_INPUT,
                     data: viewModel.scanData
                 };
 

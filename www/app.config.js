@@ -1,4 +1,4 @@
-var appVer = "1.1.0";
+var appVer = "1.2.0";
 var nullDeviceType = "PC";
 var asUserList = [];
 var pushChn = "";
@@ -7,6 +7,8 @@ var serviceURL = "http://218.104.52.26/AsapmentWebAPI";
 var debugMode = true;
 var getCHNRetry = 0;
 var currentUser = "";
+var plantList = [];
+var defaultPlant = "";
 
 //var serviceURL = "http://180.166.252.90:20191/WebAPITest";
 //var serviceURL = "http://58.221.237.66:8005/NBIWebAPI";

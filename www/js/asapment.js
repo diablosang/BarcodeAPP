@@ -411,6 +411,7 @@ function Logon(u, p) {
             var view = "BarcodeMenu";
             var option = { root: true };
             GetUserList(u);
+            GetPlantList(u);
             Mobile.app.navigate(view, option);
             return success;
         },
@@ -460,6 +461,23 @@ function GetUserList(u) {
     });
 }
 
+function GetPlantList(u) {
+    var url = serviceURL + "/Api/Barcode/GetPlantList?UserName=" + u;
+
+    $.ajax({
+        type: 'GET',
+        url: url,
+        cache: false,
+        success: function (data, textStatus) {
+            plantList = data.plantList;
+            defaultPlant = data.defaultPlant;
+        },
+        error: function (xmlHttpRequest, textStatus, errorThrown) {
+            viewModel.indicatorVisible(false);
+            ServerError(xmlHttpRequest.responseText);
+        }
+    });
+}
 
 function ASGetString(s) {
     if (s == null) {

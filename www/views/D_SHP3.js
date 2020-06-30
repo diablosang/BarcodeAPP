@@ -18,6 +18,30 @@
             colCountByScreen: { lg: 3, md: 3, sm: 3, xs: 3 },
             items: [
                 {
+                    label: { text: "工厂" },
+                    dataField: "CODE_PLANT",
+                    editorType: "dxSelectBox",
+                    editorOptions: {
+                        dataSource: [{ CODE_PLANT: "HXC" }],
+                        displayExpr: "CODE_PLANT",
+                        valueExpr: "CODE_PLANT",
+                        value: defaultPlant
+                    },
+                    colSpan: 1
+                },
+                {
+                    label: { text: "日期" },
+                    dataField: "DATE_INPUT",
+                    editorType: "dxDateBox",
+                    editorOptions: {
+                        width: "130",
+                        displayFormat: "yyyy-MM-dd",
+                        pickerType: "calendar",
+                        dateSerializationFormat: "yyyy-MM-dd"
+                    },
+                    colSpan: 1
+                },
+                {
                     label: { text: "单号" },
                     dataField: "CODE_SHP",
                     editorOptions: {
@@ -74,7 +98,7 @@
         viewModel.scanData = [];
         viewModel.issData = [];
         viewModel.modelBarInfo.SetBarInfo({ data: {} });
-        form.option("formData", { CODE_SHP: "", CODE_BOX: "", CLOSE: false });
+        form.option("formData", { CODE_SHP: "", CODE_BOX: "", CLOSE: false, CODE_PLANT: defaultPlant, DATE_INPUT: GetDateString2(new Date()) });
         var postData = {
             fid: viewModel.fid
         }
@@ -428,6 +452,8 @@
                     CODE_SHP: viewModel.code_shp,
                     CODE_BOX: viewModel.code_box,
                     CLOSE: formData.CLOSE,
+                    CODE_PLANT: formData.CODE_PLANT,
+                    DATE_INPUT: formData.DATE_INPUT,
                     data: viewModel.scanData
                 };
 
