@@ -15,7 +15,7 @@
         issData:[],
         formOption: {
             colCount: 3,
-            colCountByScreen: { lg: 3, md: 3, sm: 3, xs: 3 },
+            colCountByScreen: { lg: 4, md: 4, sm:4, xs: 4 },
             items: [
                 {
                     label: { text: "工厂" },
@@ -27,7 +27,7 @@
                         valueExpr: "CODE_PLANT",
                         value: defaultPlant
                     },
-                    colSpan: 1
+                    colSpan:2
                 },
                 {
                     label: { text: "日期" },
@@ -39,7 +39,7 @@
                         pickerType: "calendar",
                         dateSerializationFormat: "yyyy-MM-dd"
                     },
-                    colSpan: 1
+                    colSpan: 2
                 },
                 {
                     label: { text: "单号" },
@@ -49,7 +49,7 @@
                             KeyDown("CODE_SHP", e);
                         }
                     },
-                    colSpan: 2
+                    colSpan: 3
                 },
                 {
                     label: { text: "关闭" },
@@ -65,7 +65,7 @@
                             KeyDown("CODE_BOX", e);
                         }
                     },
-                    colSpan: 3
+                    colSpan: 4
                 },
                 {
                     label: { text: "条码" },
@@ -75,7 +75,7 @@
                             KeyDown("CODE_BAR", e);
                         }
                     },
-                    colSpan: 3
+                    colSpan: 4
                 }
             ]
         },
